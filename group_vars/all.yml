@@ -1,0 +1,4 @@
+---
+nginx_listen_port: 80
+nginx_site_name: ansible-managed
+nginx_document_root: /var/www/ansible-managed

@@ -1,0 +1,32 @@
+---
+- name: Ensure common administration packages are installed
+  ansible.builtin.apt:
+    name:
+      - curl
+      - git
+      - unzip
+      - htop
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  become: true
+
+- name: Create DevOps application directory
+  ansible.builtin.file:
+    path: /opt/devops
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+  become: true
+
+- name: Create Ansible managed information file
+  ansible.builtin.copy:
+    dest: /opt/devops/managed-by-ansible.txt
+    content: |
+      This server is managed by Ansible.
+      Configuration repository: ansible-server-configuration
+    owner: root
+    group: root
+    mode: '0644'
+  become: true

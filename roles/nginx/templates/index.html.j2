@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansible Managed Server</title>
+</head>
+<body>
+    <h1>Ansible Managed DevOps Server</h1>
+    <p>This web server is configured automatically using Ansible.</p>
+
+    <h2>Server Information</h2>
+    <ul>
+        <li>Hostname: {{ ansible_hostname }}</li>
+        <li>Operating system: {{ ansible_distribution }} {{ ansible_distribution_version }}</li>
+        <li>Architecture: {{ ansible_architecture }}</li>
+        <li>Managed by: Ansible</li>
+    </ul>
+</body>
+</html>
